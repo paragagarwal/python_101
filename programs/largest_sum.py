@@ -1,6 +1,6 @@
 
 
-def max_subset_increasing_numbers(array=[]):
+def largest_continious_sum(array=[]):
 	temp=None
 	max_sum=None
 	for num in array:
