@@ -17,8 +17,7 @@ def partition(array=[]):
 	x=0
 	y=len(array)-2
 	while(x<y):
-		print array
-		if array[x] > pivot and array[y] <= pivot:
+		if array[x] > pivot and pivot >= array[y]:
 			swap(array, x, y)
 			x+=1
 			y-=1
@@ -27,6 +26,7 @@ def partition(array=[]):
 				x+=1
 			if array[y] >= pivot:
 				y-=1
+			
 	if(pivot < array[x]):
-		swap(array, y, len(array)-1)
-	return array
+		swap(array, x, len(array)-1)
+	return array	
