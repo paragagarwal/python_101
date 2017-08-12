@@ -73,8 +73,6 @@ def compare_hands(hand_type_1={}, hand_type_2={}):
     elif hand_type_1["type"] < hand_type_2["type"]:
         return "<"
     else:
-        h_1=[(k, v) for k, v in  hand_type_1["d_card"].iteritems()]
-        h_2=[(k, v) for k, v in  hand_type_2["d_card"].iteritems()]
         h_1= hand_type_1["skeys"]
         h_2= hand_type_2["skeys"]
         if h_1 > h_2:
