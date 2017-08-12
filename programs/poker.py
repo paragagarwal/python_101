@@ -65,8 +65,7 @@ def find_hand_type(cards=[]):
             d_card[c]=1
         else:
             d_card[c]+=1
-    return {"type":sorted(d_card.values()),"d_card": d_card, 
-            "skeys": sorted(d_card.items(), key=lambda tup: -tup[1])}
+    return {"type":sorted(d_card.values()),"skeys": sorted(d_card.items(), key=lambda tup: -tup[1])}
 
 def compare_hands(hand_type_1={}, hand_type_2={}):
     if hand_type_1["type"] > hand_type_2["type"]:
@@ -76,7 +75,6 @@ def compare_hands(hand_type_1={}, hand_type_2={}):
     else:
         h_1=[(k, v) for k, v in  hand_type_1["d_card"].iteritems()]
         h_2=[(k, v) for k, v in  hand_type_2["d_card"].iteritems()]
-        
         h_1= hand_type_1["skeys"]
         h_2= hand_type_2["skeys"]
         if h_1 > h_2:
@@ -85,24 +83,6 @@ def compare_hands(hand_type_1={}, hand_type_2={}):
             return "<"
         else:
             return "="
-        '''
-        freq=hand_type_1["type"][len(hand_type_1["type"])-1]
-        hand_1_ele=[k for k, v in hand_type_1["d_card"].iteritems() if v == freq]
-        hand_2_ele=[k for k, v in hand_type_2["d_card"].iteritems() if v == freq]
-        if max(hand_1_ele) > max(hand_1_ele):
-            return ">"
-        elif max(hand_1_ele) < max(hand_1_ele):
-            return "<"
-        else:
-            hand_1_ele=[k for k, v in hand_type_1["d_card"].iteritems() if v == 1]
-            hand_2_ele=[k for k, v in hand_type_2["d_card"].iteritems() if v == 1]
-            if max(hand_1_ele) > max(hand_1_ele):
-                return ">"
-            elif max(hand_1_ele) < max(hand_1_ele):
-                return "<"
-            else:
-                return "="
-    '''
 
 def get_hand(cards=[], times=4):
     return [cards.pop() for x in range(times)]
@@ -119,18 +99,3 @@ def simulator():
     result_interpreter(logic, hand_1, hand_2)
 
 simulator()
-
-print compare_hands(
-  find_hand_type([4, 4, 8, 1]), 
-  find_hand_type([4, 4, 2, 1]), 
-) == ">"
-
-print compare_hands(
-  find_hand_type([5, 5, 2, 1]), 
-  find_hand_type([4, 4, 8, 1]), 
-) == ">"
-
-print compare_hands(
-  find_hand_type([1, 1, 2, 1]), 
-  find_hand_type([4, 4, 8, 1]), 
-) == ">"
