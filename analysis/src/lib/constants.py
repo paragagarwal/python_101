@@ -1,0 +1,29 @@
+DB_NAME="PRIMER_AI_DATA"
+DB_TABLE_CITY_TABLE="CITY_DATA"
+DB_TABLE_KD_TREE="KD_TREE"
+NAME="name"
+NEAREST_GENOME_ID="nearest_genome_id"
+GENOME_ID="genome_id"
+LONGITUDE="longitude"
+LATITUDE="latitude"
+COUNTRY_CODE="country_code"
+MAX_EXP_FIELDS=19
+ADMIN_LEVEL_1="administrative_level_1"
+ADMIN_LEVEL_2="administrative_level_2"
+SHAPE_DATA="shape_data"
+DB_USER="root"
+DB_PASSWORD=""
+DB_HOST="localhost"
+DB_DEFINITION_FILE_PATH="resource/definition.sql"
+DB_FIELDS=[GENOME_ID, NAME, LONGITUDE, LATITUDE, COUNTRY_CODE, ADMIN_LEVEL_1, ADMIN_LEVEL_2, SHAPE_DATA]
+PARSE_INDEX={
+	GENOME_ID:0,
+	NAME:2,
+	LONGITUDE:4,
+	LATITUDE:5,
+	COUNTRY_CODE:8,
+	ADMIN_LEVEL_1:9,
+	ADMIN_LEVEL_2:10,
+	SHAPE_DATA:15
+}
+ERROR_FORMAT="BAD DATA FORMAT :: Expected fields = {}, Actual fields = {} in line {} "
